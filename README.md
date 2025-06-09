@@ -1,7 +1,7 @@
 
 # PostgreSQL 16 with `pg_hint_plan` and Cardinality Injection Support
 
-This project provides a streamlined setup for PostgreSQL 16 with [`pg_hint_plan`](https://github.com/ossc-db/pg_hint_plan), along with a loader to initialize a sample database using the IMDb dataset from the [Balsa project](https://github.com/balsa-project/balsa).
+This project provides a streamlined setup for PostgreSQL 16 with [`pg_hint_plan`](https://github.com/ossc-db/pg_hint_plan), along with a loader to initialize a sample database using the IMDb dataset.
 
 In addition to supporting planner hints, we also allow **injecting custom cardinality estimates**. This feature enables users to manually specify estimated row counts for intermediate query results, helping PostgreSQL generate more accurate and efficient execution plans — especially in cases where default estimates fall short.
 
@@ -82,7 +82,7 @@ tar zxvf ../imdb.tgz
 
 ---
 
-## 5. Load IMDb Data with Balsa Loader
+## 5. Load IMDb Data using Loader (from [Balsa](https://github.com/balsa-project/balsa))
 
 ```bash
 # In your working directory
@@ -105,5 +105,14 @@ python3 ./prepend_imdb_headers.py
 
 ## Reference 
 
-This project initializes a sample PostgreSQL database and prepares table headers using the IMDb dataset provided by the [Balsa project](https://github.com/balsa-project/balsa).
-
+We welcome all forms of discussion and collaboration for future research and are eager to help with plan selection in your project. If you find this repository valuable, please consider citing our work:
+~~~
+@article{xiu2024parqo,
+      title={{PARQO}: Penalty-Aware Robust Plan Selection in Query Optimization}, 
+      author={Haibo Xiu and Pankaj K. Agarwal and Jun Yang},
+      year={2024},
+      journal={Proceedings of the VLDB Endowment},
+      volume={17},
+      number={13},
+}
+~~~
