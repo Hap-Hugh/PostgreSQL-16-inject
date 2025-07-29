@@ -71,6 +71,9 @@ pg_ctl -D ./imdb -l ./dblogs/logfile start
 ## 4. Download and Extract IMDb Dataset
 
 ```bash
+# In your working directory
+cd ./PostgreSQL-16-inject
+
 # Download IMDb dataset
 wget https://event.cwi.nl/da/job/imdb.tgz
 
@@ -85,14 +88,12 @@ tar zxvf ../imdb.tgz
 ## 5. Load IMDb Data using Loader (from [Balsa](https://github.com/balsa-project/balsa))
 
 ```bash
-# In your working directory
-cd ./PG16
 
 # Run the Python script to prepend IMDb header
 python3 ./prepend_imdb_headers.py
 
 # Run the loader script
-./load_job_postgres.sh [full path to your datasource directory]
+bash ./load_job_postgres.sh [full path to your datasource directory]
 ```
 
 ---
